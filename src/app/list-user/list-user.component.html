@@ -1,0 +1,50 @@
+<div class="container table-header">
+  <div class="row mb-3">
+    <div class="col-sm-6">
+      <h4> Employees Details</h4>
+    </div>
+    <div class="col-sm-6 text-right">
+      <button class="btn btn-success btn-sm" (click)="addUser()">Add Employee</button>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-sm-4">
+          <input type="text" name="searchInputText" class="form-control" placeholder="Search"
+          [(ngModel)]="search" autocomplete="off" #searchInput />
+      </div>
+      <div class="col-sm-8 text-right">
+          <label><span>Count:</span> {{count}}</label>
+      </div>
+  </div>
+  
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Designation</th>
+          <th>Salary</th>
+          <th>Age</th>
+          <!-- <th>Gender</th> -->
+          <th>Address</th>
+          <th>Date Of Joining</th>
+          <th>Marital Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.firstName}}</td>
+          <td>{{user.lastName}}</td>
+          <td>{{user.designation}}</td>
+          <td>{{user.salary}}</td>
+          <td>{{user.age}}</td>
+          <!-- <td>{{user.gender}}</td> -->
+          <td>{{user.address}}</td>
+          <td>{{user.dateOfJoining}}</td>
+          <td>{{user.maritalStatus}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <ngb-pagination [collectionSize]="count" [(pageSize)]="recordsPerPage" [(page)]="currentPage"
+      (pageChange)="onPager($event)" [maxSize]="pagerSize" [rotate]="true" [boundaryLinks]="true"></ngb-pagination>
+</div>

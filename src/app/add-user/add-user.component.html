@@ -1,0 +1,61 @@
+<div class="col-md-6">
+
+  <h2 class="text-center">Add Employee</h2>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="designation">Designation:</label>
+      <input formControlName="designation" placeholder="Designation" name="designation" class="form-control"
+        id="designation">
+    </div>
+
+    <div class="form-group">
+      <label for="salary">Salary:</label>
+      <input formControlName="salary" placeholder="Salary" name="salary" class="form-control" id="salary">
+    </div>
+
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input formControlName="age" placeholder="Age" name="age" class="form-control" id="age">
+    </div>
+
+    <!--     <div class="form-group">
+      <label for="gender">Gender:</label>
+      <input formControlName="gender" placeholder="Gender" name="gender" class="form-control" id="gender">
+    </div> -->
+
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <input formControlName="address" placeholder="Address" name="address" class="form-control" id="address">
+    </div>
+
+    <div class="form-group">
+      <label for="dateOfJoining">Date Of Joining:</label>
+      <input formControlName="dateOfJoining" placeholder="Date Of Joining" name="dateOfJoining" class="form-control"
+        id="dateOfJoining">
+    </div>
+
+    <div class="form-group">
+      <label for="maritalStatus">Marital Status:</label>
+      <select formControlName="maritalStatus" aria-placeholder="Marital Status" name="maritalStatus" class="form-control"
+        id="maritalStatus">
+        <option value="" hidden disabled>Select Status</option>
+        <option value="Unmarried">Unmarried</option>
+        <option value="Married">Married</option>
+      </select>
+    </div>
+    <button class="btn btn-success" [disabled]="addForm.invalid">Update</button>
+    <button class="btn btn-success f-5" [routerLink]="['/list-user']">Detail Page</button>
+  </form>
+</div>

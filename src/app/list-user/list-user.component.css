@@ -1,0 +1,13 @@
+.table-header {
+  margin-top: 2rem;
+  align-items: center;
+}
+
+.table-header label {
+  font-size: 14px;
+  color: #333;
+}
+
+.table-header label span {
+    font-weight: 600;
+}
